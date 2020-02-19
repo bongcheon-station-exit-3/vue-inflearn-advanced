@@ -11,3 +11,6 @@
 * TSLint : 타입스크립트 문법 검사 플러그인
 * Auto Close tag : HTML 태그 자동 닫기 플러그인
 * Live Server : 정적 파일을 로컬 서버에 올리고 자동 갱신해주는 플러그인
+
+## Vue 스타일 가이드
+* https://vuejs.org/v2/style-guide/
