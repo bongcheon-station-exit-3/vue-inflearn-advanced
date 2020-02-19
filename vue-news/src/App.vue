@@ -1,18 +1,18 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <!-- 라우터에 맞는 컴포넌트가 뷰에 나옴 -->
+    <tool-bar />
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
+import ToolBar from './components/ToolBar.vue';
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
-  }
+  components: {ToolBar}
 }
 </script>
 
