@@ -32,4 +32,28 @@
 ## CLI 3.x
 * preset : 플러그인 구성을 설정을 의미
   * ex) default(babel, eslint)
-  * 
+
+## Vue LintOnSave
+* https://cli.vuejs.org/config/#transpiledependencies
+
+## 수행
+* router/index.js
+* views/**/*.vue 위치
+  * vetur 이용, `vue` 명령어를 통한 뷰 디폴트 코드 자동완성
+
+## This 키워드
+* javascript 에서 `this` 키워드는 전역을 가리키고, 이런것들 방지하게 위해 es6 에서 `use strict` 가 있다.
+* `this` 에서 전역으로 가리키는 경우가 있고, 생성자 함수를 가리키는 경우가 있다.
+```javascript
+function sum(a, b){
+  console.debug(this);  // window
+  return a + b;
+}
+
+function vue(el){
+  console.debug(this);  // vue {}
+  this.el = el;
+}
+```
+* 비동기통신시 `this` 는 `undefined` 를 가리키지만, es6 부터는 화살표 함수를 이용한다면, `this` 는 실제 객체를 가리킬 수 있다.
+  * 결과적으로 __화살표 함수__ 를 지향하는 것이 좋다.
