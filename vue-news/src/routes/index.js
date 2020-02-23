@@ -7,6 +7,10 @@ import NewsView from '../views/NewsView';
 Vue.use(VueRouter);
 
 export const router = new VueRouter({
+    
+    /** uri 상에서 hash 값 제거 */
+    mode: 'history',
+
     routes: [
         {
             path: '/',
