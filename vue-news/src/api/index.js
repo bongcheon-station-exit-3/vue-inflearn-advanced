@@ -6,20 +6,20 @@ const config = {
 };
 
 // 2.  API 함수 정리
-function fetchNewsList() {
+function fetchNewsItemList() {
     return axios.get(`${config.baseUrl}newstories.json?print=pretty`);
 }
 
-function fetchJobsList() {
+function fetchJobsItemList() {
     return axios.get(`${config.baseUrl}jobstories.json?print=pretty`);
 }
 
-function fetchAsksList() {
+function fetchAsksItemList() {
     return axios.get(`${config.baseUrl}askstories.json?print=pretty`);
 }
 
 export {
-    fetchNewsList,
-    fetchJobsList,
-    fetchAsksList
+    fetchNewsItemList,
+    fetchJobsItemList,
+    fetchAsksItemList
 }
