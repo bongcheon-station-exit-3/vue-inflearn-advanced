@@ -10,7 +10,6 @@ export default {
     name: 'AskView',
     data() {
         return {
-            askItems: []
         }
     },
     created() {

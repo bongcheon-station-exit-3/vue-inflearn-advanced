@@ -57,3 +57,17 @@ function vue(el){
 ```
 * 비동기통신시 `this` 는 `undefined` 를 가리키지만, es6 부터는 화살표 함수를 이용한다면, `this` 는 실제 객체를 가리킬 수 있다.
   * 결과적으로 __화살표 함수__ 를 지향하는 것이 좋다.
+
+## Callback
+## Promise
+* `then` 키워드에 대해서 __체이닝__ 이 가능하다.
+## vuex
+* Compoent <-> Vuex <-> API
+* 컴포넌트 레벨이 깊어지거나 관계가 복잡해졌을 때 사용하면 유용
+* actions 에서 mutations 에 접근할 수 있도록 인자값 `context` 가 제공된다.
+```javascript
+FOO(context) {
+  // ...
+  context.commit('blahblah', response.data);
+}
+```
