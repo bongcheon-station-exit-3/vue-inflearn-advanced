@@ -1,29 +1,26 @@
 <template>
     <div id="ask-views">
-        <div v-for="item in asksItems">{{item}}</div>
+        <div v-for="element in asksElements">
+            {{element}}
+        </div>
     </div>  
 </template>
 
 <script>
-
-import {
-    mapState,
-    mapGetters,
-} from 'vuex';
+import {mapGetters} from 'vuex';
 
 export default {
     name: 'AskView',
     computed: {
-        ...mapGetters(['asksItems'])
-        // ...mapState({
-        //     ask: state => state.askItems
-        // })
-        // ask() {
-        //     return this.$store.state;
-        // },
+        ...mapGetters(['asksItems', 'asksElements']),
     },
     created() {
-        this.$store.dispatch('FETCH_ASKS_ITEMS');
+        this.$store.dispatch('FETCH_ASKS_ITEMS').then(() => {
+            const params = {};
+            params.type = 'asks';
+            params.items = this.asksItems;
+            this.$store.dispatch('FETCH_ELEMENT_BY_ITEM', params);
+        });
     }
 }
 </script>

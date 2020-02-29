@@ -18,8 +18,13 @@ function fetchAsksItemList() {
     return axios.get(`${config.baseUrl}askstories.json?print=pretty`);
 }
 
+function fetchElementByItem(item){
+    return axios.get(`${config.baseUrl}/item/${item}.json?print=pretty`);
+}
+
 export {
     fetchNewsItemList,
     fetchJobsItemList,
-    fetchAsksItemList
+    fetchAsksItemList,
+    fetchElementByItem,
 }

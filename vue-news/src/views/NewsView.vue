@@ -1,19 +1,32 @@
 <template>
   <div id="news-views">
-      <div v-for="item in this.$store.state.newsItems">{{item}}</div>
+      <div v-for="element in newsElements">
+        {{element}}
+        <!-- <a v-bind:href="element.url">
+          {{element.title}}
+        </a> -->
+        <small>{{element.user}}</small>
+      </div>
+
+
   </div>
 </template>
 
 <script>
+import {mapGetters} from 'vuex';
 
 export default {
     name: 'NewsView',
-    data() {
-      return {
-      }
+    computed: {
+      ...mapGetters(['newsItems', 'newsElements'])
     },
     created() {
-      this.$store.dispatch('FETCH_NEWS_ITMES');
+      this.$store.dispatch('FETCH_NEWS_ITMES').then(() => {
+          const params = {};
+          params.type = 'news';
+          params.items = this.newsItems;
+          this.$store.dispatch('FETCH_ELEMENT_BY_ITEM', params);
+      });
     }
 }
 </script>
