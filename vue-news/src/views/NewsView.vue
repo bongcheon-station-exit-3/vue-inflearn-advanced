@@ -1,14 +1,11 @@
 <template>
   <div id="news-views">
-      <div v-for="element in newsElements">
-        {{element}}
-        <!-- <a v-bind:href="element.url">
+      <div v-for="element in newsElements" :key="element.id">
+        <a :href="element.url">
           {{element.title}}
-        </a> -->
-        <small>{{element.user}}</small>
+        </a>
+        <small>{{element.user}} by {{element.by}}</small>
       </div>
-
-
   </div>
 </template>
 

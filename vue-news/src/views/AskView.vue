@@ -1,7 +1,8 @@
 <template>
     <div id="ask-views">
-        <div v-for="element in asksElements">
-            {{element}}
+        <div v-for="element in asksElements" :key="element.id">
+            {{element.title}}
+            <small>{{element.user}} by {{element.by}}</small>
         </div>
     </div>  
 </template>

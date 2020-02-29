@@ -39,7 +39,6 @@ export default {
 
     FETCH_ELEMENT_BY_ITEM({state, commit}, params) {
         const type = params.type;
-        console.debug(params);
         params.items.forEach(item => {
             fetchElementByItem(item).then((response) => {
                 if(type === 'asks'){

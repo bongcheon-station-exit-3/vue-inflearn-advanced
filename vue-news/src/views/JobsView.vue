@@ -1,7 +1,10 @@
 <template>
     <div id="jobs-view">
-        <div v-for="element in jobsElements">
-            {{element}}
+        <div v-for="element in jobsElements" v-bind:key="element.id">
+            <a v-bind:href="element.url">
+                {{element.title}}
+            </a>
+            <small>{{element.user}} by {{element.by}}</small>
         </div>
     </div>
 </template>
