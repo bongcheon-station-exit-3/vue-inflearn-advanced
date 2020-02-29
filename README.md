@@ -71,3 +71,21 @@ FOO(context) {
   context.commit('blahblah', response.data);
 }
 ```
+
+## 객체 디스트럭처링 (Destructuring) : 구조 분해 할당
+```javascript
+// ES6 Destructuring
+const obj = { firstName: 'Ungmo', lastName: 'Lee' };
+
+// 프로퍼티 키를 기준으로 디스트럭처링 할당이 이루어진다. 순서는 의미가 없다.
+// 변수 lastName, firstName가 선언되고 obj(initializer(초기화자))가 Destructuring(비구조화, 파괴)되어 할당된다.
+const { lastName, firstName } = obj;
+
+console.log(firstName, lastName); // Ungmo Lee
+```
+* ES6의 객체 디스트럭처링은 객체의 각 프로퍼티를 객체로부터 추출하여 변수 리스트로 할당한다. 이때 할당기준은 프로터티 키이다.
+
+## mapState
+> vuex 의 store 값을 헬퍼함수를 통해서 획득한다.   
+> mapState 보단, vuex 의 `getters` 를 이용하기도 한다.
+
